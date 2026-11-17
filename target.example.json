@@ -1,0 +1,22 @@
+{
+  "name": "Example portal",
+  "login_url": "https://portal.example.com/login",
+  "alert_url": "https://portal.example.com/book",
+  "login": {
+    "username_selector": "input[name='username']",
+    "password_selector": "input[name='password']",
+    "captcha_image_selector": "img#captcha",
+    "captcha_input_selector": "input[name='captcha']",
+    "submit_selector": "button[type='submit']",
+    "success_selector": "text=Dashboard"
+  },
+  "steps": [
+    { "action": "select", "selector": "select[name='location']", "value": "Your location" },
+    { "action": "select", "selector": "select[name='category']", "value": "Your category" },
+    { "action": "click", "selector": "button:has-text('Continue')" }
+  ],
+  "availability": {
+    "no_slots_selector": "text=No appointments available",
+    "open_slot_selector": "td.available:not(.disabled)"
+  }
+}

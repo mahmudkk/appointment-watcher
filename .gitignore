@@ -1,0 +1,6 @@
+.env
+target.json
+browser_profile/
+__pycache__/
+*.pyc
+venv/
