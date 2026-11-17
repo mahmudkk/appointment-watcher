@@ -4,7 +4,7 @@ A small Telegram bot that watches an appointment booking portal you already have
 
 The target portal is described in a JSON file, so nothing in the code is tied to a specific site.
 
-# Problem. 
+# Problem
 
 Appointment slots for visa application centres such as VFS Global are scarce, and they often appear without warning and disappear within minutes. Applicants in several countries have reported that automated bots book slots the moment they are released and resell them, which makes real availability even harder for ordinary applicants to catch. Without a waitlist or notification feature, the only option is to refresh the portal by hand throughout the day.
 
