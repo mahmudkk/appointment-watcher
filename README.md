@@ -4,6 +4,22 @@ A small Telegram bot that watches an appointment booking portal you already have
 
 The target portal is described in a JSON file, so nothing in the code is tied to a specific site.
 
+# Problem. 
+
+Appointment slots for visa application centres such as VFS Global are scarce, and they often appear without warning and disappear within minutes. Applicants in several countries have reported that automated bots book slots the moment they are released and resell them, which makes real availability even harder for ordinary applicants to catch. Without a waitlist or notification feature, the only option is to refresh the portal by hand throughout the day.
+
+**Solution**. Appointment Watcher was built to give applicants a fair way to notice a slot when one opens. It logs into the applicant’s own account, follows the booking flow to the calendar page, and checks it every few minutes. When a slot appears, it sends a Telegram message within moments so the applicant can book it themselves.
+
+**Design choices**. It is deliberately the opposite of a booking bot:
+it only notifies and never books or submits anything;
+CAPTCHAs are not bypassed: the bot sends the image to Telegram and a human types the answer;
+it polls at a modest interval (5 to 10 minutes) and reuses one browser session instead of logging in repeatedly;
+the target portal is described in a JSON file, so no site-specific logic is hard-coded.
+
+**Stack.** Python, asyncio, Playwright, aiogram.
+
+It was initially developed for a personal need: getting a Schengen visa appointment for my parents.
+
 ## How it works
 
 1. Playwright opens a Chromium window and logs into the portal with your own account.
